@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Home Insurance</title>
+    <meta charset='utf-8'>
+    <meta name='description' content='insurance'>
+    <meta name='keywords' content='home insurance, home, insurance, home repair, home damage, home insurance quote'>
+    <meta name='author' content=''>
+    <meta name='robots' content='all'>
+    <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
+    
+   <script type ="text/javascript" src="form.js"></script>
+
+    <style type ="text/css">
+    html{
+    background: url(background.jpg) no-repeat center center fixed;    /*image sourced from http://www.hdwallpapers.in/walls/up_movie_balloons_house-wide.jpg*/
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+  
+    }
+    body{
+    font-size: 62.5%;
+    }
+    h1
+    {
+    text-align:center;
+    font-size:4em;
+    font-size: 2.5vw;
+    color:#3378B9;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+    font-weight:bold;
+    }
+    h2{
+    font-size:3em;
+    font-size: 2.5vw;
+    color:#3378B9;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
+    p{
+    color:#3378B9;
+    font-size:1.5em;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight:bold;
+    }
+    fieldset {
+   float:left;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 5px solid #ffffff;
+  padding: 12px 1em 0.5em 10px; 
+  background:url(formBackground.jpg) no-repeat center center fixed; /*image sourced from background-pictures.vidzshare.net*/
+  background-repeat:no-repeat;
+   background-size:cover;
+    background-position:center;
+   /*#F0EEEF; */
+  width:50%;
+  float:left;
+  margin-left:20px;
+  }
+  td{
+  padding:10px;
+    width:40%;
+    border-bottom:2px solid #3378B9;
+  }
+  textarea{
+  width:100%;
+  border-radius:10px;
+  }
+  select{
+  border-radius:5px;
+  }
+ 
+input:focus, textarea:focus {
+
+  background: #C3E0FA;
+  }
+  select{
+  background:#C3E0FA;
+  }
+
+   label{
+   font-size:1.5em;
+   }
+   .button{
+    background-color:#3378B9;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size:2em;
+    font-size: 1.5vw;
+    padding:10px;
+    border-radius:10px;
+    color:#ffffff;
+   
+   }
+   .button:hover{
+   background-color:#C3E0FA;
+   color:#3378B9;
+   }
+   .quote{
+   float:left;
+   top:0;
+   }
+  
+
+   @media screen and (max-width: 500px){
+   textarea{
+  max-width:100%;
+  height:auto;
+  }
+
+   select{ 
+   height:40px;
+   }
+  fieldset{
+  max-width:100%;
+  height:auto;
+  }
+  input{
+  height:20px;
+  padding:10px;
+  }
+  
+  h1,h2{
+  font-size: 4.5vw;
+  }
+  }
+
+    </style>
+   
+    
+    
+  </head>
+  <body>
+ 
+  
+  <fieldset>
+  <h1>Home Insurance</h1><hr>
+  <h2>Get a quote &#187;</h2>
+
+ <form onreset="return confirmReset()">
+   <table>
+ <tr><td>
+ <p>Do you own the property or rent it from someone?</p>
+<input type = "radio" name="own" id="own1" value="50" onchange = "getSelectedItem()"/><label for="own1">I own and live in it</label><br>
+  <input type ="radio" name="own" id="own2" value="25" onchange = "getSelectedItem()"/><label for="own2">I own it and it's a Summer House </label><br>
+  <input type ="radio" name="own" id="own3" value="5" onchange = "getSelectedItem()" /><label for="own3">I rent it from someone </label>
+ </td></tr>
+ <tr><td>
+ <p>Type of property</p>
+ <select name ="propertyType" onblur="getProperty()" >
+ <option value = "none">Select Property</option>
+ <option value="100">Detached</option>
+ <option value="50">Semi-Detached</option>
+ <option value="65">Bungalow</option>
+ <option value="40">Teraced</option>
+ <option value="10">Apartment</option>
+ </select></td></tr>
+ <tr><td>
+ <p>Years Old</p>
+ <Select name="yearsOld" onblur="getYears()">
+ <option value="none">Select a year</option>
+ <option value="50">&lt;1</option>
+ <option value="75"> >1 &lt;5</option>
+ <option value="90"> >5 &lt;15</option>
+ <option value="100"> >15</option>
+ </select></td></tr>
+ <tr><td>
+ <p>House Alarm</p>
+ <input type="radio" name="alarm" id="alarm1" value="100"  onchange="getAlarm()" /><label for="alarm1">No</label><br>
+ <input type="radio" name="alarm" id="alarm2" value="40"  onchange="getAlarm()"/><label for="alarm2">Yes - Standard Alarm</label><br>
+ <input type="radio" name="alarm" id="alarm3" value="10"  onchange="getAlarm()"/><label for="alarm3">Yes - Monitored Alarm</label>
+ </td></tr>
+ <tr><td>
+ <p>At least Two Smoke Detectors Fitted</p>
+ <input type="radio" name="smokeAlarm" id="r1" value="50" onchange="getSmokeAlarm()"/><label for="r1">No</label><br>
+ <input type="radio" name="smokeAlarm" id="r2" value="10" onchange="getSmokeAlarm()"/><label for="r2">Yes</label>
+ </td></tr><tr><td>
+ <p>Location</p>
+ <select name="location" onblur="getLocation()">
+ <option value="none">Select a location</option>
+ <option value="50">Dublin</option>
+ <option value="30">Cork, Limerick, Kerry</option>
+ <option value="10">West of Ireland</option>
+ </select></td></tr>
+ <tr><td>
+ <p>Claims Free For</p>
+ <select name="claimsFree" onblur="getClaimsFree()">
+ <option value="none">How many years</option>
+ <option value="100">1 Year</option>
+ <option value="80">2 Years</option>
+ <option value="60">3 Years</option>
+ <option value="40">4 Years</option>
+ <option value="20">>= 5 Years</option>
+ </select></td></tr>
+ <tr><td>
+ <p>Buildings Cover</p>
+ <input type="text" name="buildingsCover" style="border-radius:5px;" onblur="getBuildingsCover()"/></td></tr>
+ <tr><td>
+ <p>Contents Cover</p>
+ <select name="contentsCover" onblur="getContentsCover()">
+ <option value="none">Select amount</option>
+ <option value="50">&#8364;20,000</option>
+  <option value="70">&#8364;40,000</option>
+   <option value="90">&#8364;60,000</option>
+    <option value="110">&#8364;80,000</option>
+     <option value="150">&#8364;80,000</option>
+  </select></td></tr>
+<tr><td>  <p>Claim Excess</p>
+  <input type="radio" name="claimExcess" id="r3" value="30" onchange="getClaimExcess()"/><label for="r3">&#8364;250</label>
+   <input type="radio" name="claimExcess" id="r4" value="50" onchange="getClaimExcess()"/><label for="r4">&#8364;500</label>
+    <input type="radio" name="claimExcess" id="r5" value="70" onchange="getClaimExcess()"/><label for="r5">&#8364;1,000</label>
+    </td></tr>
+    <tr><td>
+    
+    <input type="button" name="calculate" class="button" value="Calculate" onclick="validate()" /></td></tr>       
+    <tr><td><textarea name="quote" readonly rows ="10" cols="70"></textarea>  
+      </td></tr>
+     <tr><td><input value="Reset" type="reset" class= "button" style="float:right; font-size:1em;"></td></tr> 
+    </table>
+                               
+   
+    
+    </form>
+     
+    </fieldset>
+      
+ 
+ 
+  </body>
+
+</html>
